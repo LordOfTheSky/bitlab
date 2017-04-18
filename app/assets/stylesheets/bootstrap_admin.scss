@@ -1,0 +1,11 @@
+/*
+  *= require bitlab/theme
+  *= require bitlab/admin-tools/admin-forms/admin-forms
+  *= require bitlab/admin-tools/admin-forms/skins/all-themes.min
+  */
+
+  @import "bitlab/theme";
+  @import "bitlab/admin-tools/admin-forms/admin-forms";
+  @import "bitlab/admin-tools/admin-forms/skins/all-themes.min";
+  @import "inheritance/default";
+  @import 'inheritance/sessions';
