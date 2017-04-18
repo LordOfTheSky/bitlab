@@ -1,0 +1,36 @@
+es:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "La validación falló: %{errors}"
+        restrict_dependent_destroy:
+          has_one: El registro no puede ser eliminado pues existe un %{record} dependiente
+          has_many: El registro no puede ser eliminado pues existen %{record} dependientes
+    models:
+      user:
+        one: "usuario"
+        other: "usuarios"
+        all_selected: 'todos los usuarios'
+      role:
+        one: "role"
+        other: "roles"
+        all_selected: 'todos los roles'
+      permission:
+        one: 'permiso'
+        other: 'permisos'
+        all_selected: 'todos los permisos'
+    attributes:
+      user:
+        logout: 'Cerrar sesión'
+        filter: 'Filtrar'
+        clear_filter: 'Limpiar filtros'
+        first_name: 'Nombre(s)'
+        last_name: 'Apellido(s)'
+        username: 'Nombre de usuario'
+        password: 'Contraseña'
+        role: 'Role'
+        idTrello: 'Trello Id'
+        full_name: 'Nombre completo'
+        password_confirmation: 'Confirmar Contraseña'
+      role:
+        name: 'titulo'
