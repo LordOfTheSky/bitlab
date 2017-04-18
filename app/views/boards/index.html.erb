@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Boards</h1>
+</center>
+
+<div class="row">
+<% @boards.each do |board| %>
+  <div class="col-sm-4 col-lg-4 col-md-4">
+   <div class="thumbnail">
+    <div class="caption">
+    <center>
+
+      <h4><%= link_to board.name, :controller => "boards", :action => "show", :trello => board.id %></h4>
+      <br>
+
+    </center>
+    </div>
+    </div>
+  </div>
+
+
+<% end %>
+</div>
