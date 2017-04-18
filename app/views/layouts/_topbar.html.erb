@@ -1,0 +1,31 @@
+<% @topbar ||= false %>
+<% if @topbar || !content_for?(:topbar) %>
+  <% if inherited_controller? %>
+    <header id="topbar" class="alt">
+      <div class="topbar-left">
+        <ol class="breadcrumb">
+          <li class="crumb-active">
+            <a href="<%= polymorphic_path([namespace, object_class]) %>">
+              <%= controller_name.classify.constantize.model_name.human count: 2 %>
+            </a>
+          </li>
+          <li class="crumb-trail"><%= t "actions.#{params[:action]}" %></li>
+        </ol>
+      </div>
+      <div class="topbar-right">
+        <% (@links || []).each do |link| %>
+          <%= link_to link[1][:title], link[1][:path], class: link[1][:class] || 'btn btn-primary', method: link[1][:method] || 'delete', style: "display: #{link[1].try(:[], :options).try(:[], :enabled)}" || '' %>
+        <% end %>
+        <div class="btn-group">
+          <% if !content_for?(:tools) %>
+            <button type="button" class="btn btn-dark" onclick="location.href='<%= new_polymorphic_path([namespace, object_class]) %>'">
+              <i class="fa fa-plus"></i>
+            </button>
+          <% end %>
+        </div>
+      </div>
+    </header>
+  <% end %>
+<% else %>
+  <%= yield :topbar %>
+<% end %>

@@ -1,0 +1,8 @@
+<ul class="nav sidebar-menu">
+  <li class="sidebar-label pt20">Menu</li>
+  <%= sidebar_icon_accordion 'Home', 'fa fa-home' do  %>
+    <%= accordion_icon_link 'Users', users_path, nil, nil %>
+    <%= accordion_icon_link 'Boards', boards_path, nil, nil %>
+    <%= accordion_icon_link 'Home', root_path, nil, nil %>
+  <% end %>
+</ul>
