@@ -203,8 +203,80 @@ Create new Folder
 
 ### Configuración
 
+* Archivos de configuración
+
+En el desarrollo de la aplicación se deben de configurar diferentes archivos según el usuario que se encuentre accediendo al sistema, dado que cada computadora tiene por ejemplo, diferente User y Pass para acceder a DB
+
+-DATABASE.YML
+
+```Ruby
+Default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: #username
+  password: #password
+
+
+development:
+  <<: *default
+  database: #namedatabase
+```
+
+-APPLICATION.RB
+
+Se agregan los requerimientos de las gemas que se van a utilizar dentro de la aplicación, junto con la internacionalicación mediante i18n estableciendo el lenguaje local como `:es`
+
+```Ruby
+require 'rails/all'
+require 'httparty'
+require 'trello'
+
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(*Rails.groups)
+
+module BitlabAdmin
+  class Application < Rails::Application
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration should go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded.
+    config.i18n.default_locale = :es
+
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
+  end
+end
+```
+
+-INITIALIZERS/TRELLO.RB
+
+Se agregan las llaves del usuario que va a utilizar el sistema de Trello
+
+```Ruby
+Trello.configure do |config|
+	config.developer_public_key = '#yourpublickey'
+	config.member_token = '#yourmembertoken'
+end
+```
+* Configuración de los requerimientos
+
 ### Uso
+
+* Manual para usuarios finales
+
+* Referencia usuario administrador
 
 ### Contribución
 
+* Contribución para usuarios
+
+* Pasos para aportar
+
 ### Roadmap
+
+* Requerimientos futuros
