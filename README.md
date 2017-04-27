@@ -37,6 +37,42 @@ El uso de la Gem facilito la obtención de datos dado que se manejo solamente me
 
 ### Requerimientos
 
+* Servidores, Web, Base de Datos
+
+Github 
+
+Bitlab Server 
+
+Postgresql
+
+Heroku 
+
+Trello Account 
+
+* Paquetes adicionales
+
+Al crear Proyecto en Ruby o clonar el repositorio en el archivo Gemfile se tienen que agregar las siguientes dependencias para su correcto uso 
+
+```Ruby
+gem 'jquery-rails'
+
+gem 'jsonapi-parser', '~> 0.1.1.beta2'
+gem 'jquery-ui-rails'
+gem 'rails-i18n', '~> 5.0.0'
+gem 'httparty', '~> 0.13.5'
+gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'ruby-trello', '~> 1.5', '>= 1.5.1'
+gem 'bootstrap-admin', git: 'https://BLRGR:guad.rm1@bitbucket.org/bitlabmx/bootstrapadmin.git'
+gem 'inheritance', git: 'https://BLRGR:guad.rm1@bitbucket.org/bitlabmx/inheritanceresources.git',  branch: 'FL_add_generators'
+gem 'jsonapi'
+gem 'turbolinks', '~> 5'
+```
+* Versión de Ruby
+
+```Ruby
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+```
+
 ### Instalación
 
 ### Configuración
