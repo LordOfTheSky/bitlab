@@ -81,6 +81,126 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
 ### Instalación
 
+* Instalar ambiente de desarrollo
+
+Open Terminal and run the following command:
+
+`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+Now that we have Homebrew installed, we can use it to install Ruby.
+
+We're going to use rbenv to install and manage our Ruby versions.
+
+To do this, run the following commands in your Terminal:
+
+`brew install rbenv ruby-build`
+
+Add rbenv to bash so that it loads every time you open a terminal
+
+`echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile`
+
+`source ~/.bash_profile`
+
+Install Ruby
+
+`rbenv install 2.4.0`
+
+`rbenv global 2.4.0`
+
+`ruby -v`
+
+Replace the example name and email address in the following steps with the ones you used for your Github account.
+
+`git config --global color.ui true`
+
+`git config --global user.name "YOUR NAME"`
+
+`git config --global user.email "YOUR@EMAIL.com"`
+
+`ssh-keygen -t rsa -C "YOUR@EMAIL.com"`
+
+The next step is to take the newly generated SSH key and add it to your Github account. You want to copy and paste the output of the following command and paste it here.
+
+`cat ~/.ssh/id_rsa.pub`
+
+Once you've done this, you can check and see if it worked:
+
+`ssh -T git@github.com`
+
+You should get a message like this:
+
+`Hi excid3! You've successfully authenticated, but GitHub does not provide shell access.`
+
+Installing Rails is as simple as running the following command in your Terminal:
+
+`gem install rails -v 5.0.1`
+
+Rails is now installed, but in order for us to use the rails executable, we need to tell rbenv to see it:
+
+`rbenv rehash`
+
+And now we can verify Rails is installed:
+
+`rails -v`
+
+`Rails 5.0.1`
+
+You can install PostgreSQL server and client from Homebrew:
+
+`brew install postgresql`
+
+Once this command is finished, it gives you a couple commands to run. Follow the instructions and run them:
+
+To have launchd start postgresql at login:
+
+`ln -sfv /usr/local/opt/postgresql/*plist ~/Library/LaunchAgents`
+
+Then to load postgresql now:
+
+`launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist`
+
+ And now for the moment of truth. Let's create your first Rails application:
+
+`rails new myapp`
+
+ If you want to use Postgres
+
+ Note you will need to change config/database.yml's username to be
+
+ the same as your OSX user account. (for example, mine is 'chris')
+
+`rails new myapp -d postgresql`
+
+ Move into the application directory
+
+`cd myapp`
+
+ If you setup MySQL or Postgres with a username/password, modify the
+
+ config/database.yml file to contain the username/password that you specified
+
+ Create the database
+
+`rake db:create`
+
+`rails server`
+
+* Ejecutar pruebas manualmente
+
+Mediante la carpeta Test se modifican las pruebas para controllador y modelos
+
+* Producción en ambiente local 
+
+In command line
+
+Create new Folder
+
+`cd Documents/new-folder/`
+
+`git clone https://github.com/LordOfTheSky/bitlab.git`
+
+`rails server`
+
 ### Configuración
 
 ### Uso
