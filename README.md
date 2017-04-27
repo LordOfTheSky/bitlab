@@ -67,9 +67,15 @@ gem 'inheritance', git: 'https://BLRGR:guad.rm1@bitbucket.org/bitlabmx/inheritan
 gem 'jsonapi'
 gem 'turbolinks', '~> 5'
 ```
-* Versión de Ruby
+* Versión de Ruby and Rails
 
 ```Ruby
+Se declara mediante linea de comandos al momento de instalarlo
+
+ruby 2.3.1p112
+
+Se declara en el Gemfile del archivo creado en Ruby 
+
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 ```
 
