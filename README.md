@@ -265,18 +265,90 @@ end
 ```
 * Configuración de los requerimientos
 
+Al momento de establecer todas las Gem necesarias dentro del archivo Gemfile se procedera a ejecutar el siguiente comando en la terminal dentro de la carpeta donde se encuentra el sistema.
+
+`bundle install`
+
+lo que realiza dicho comando es instalar todas las gemas que se encuentran declaradas dentro del archivo.
+
+
 ### Uso
 
 * Manual para usuarios finales
 
+Al correr el programa se cargará el index de Login donde se procederá a ingresar sesión con el usuario creado en Seeds
+
+![image](https://cloud.githubusercontent.com/assets/16099685/25509406/6239842a-2b7e-11e7-9e6e-e39c8e8cfc6a.png)
+
+Una vez cargado y verificado el usuario se mostrara la pantalla principal de administrador donde se encuentran todos los usuarios creados, por el momento solo aparecerá el usuario admin creado en seeds
+
+![image](https://cloud.githubusercontent.com/assets/16099685/25509425/8f99e2e8-2b7e-11e7-9f70-beafe73959e1.png)
+
+Los botones a lado de los nombres, el rojo es para eliminar y el verde es para editar la información del usuario.
+
+![image](https://cloud.githubusercontent.com/assets/16099685/25509512/35e8cfc4-2b7f-11e7-92a1-eca04cd088eb.png)
+
+Cuando se crea un usuario se pedirán los siguientes datos, al dar clic en crear usuario será agregado directamente a la base de datos.
+
+En el menú desplegable lateral izquierdo de Home se podrán encontrar las Rutas existentes en el programa, si Damos clic en Boards se abrirá todos los Boards que tenemos en nuestra cuenta de Trello
+
+![image](https://cloud.githubusercontent.com/assets/16099685/25509559/82665830-2b7f-11e7-8f1a-6a148ceb71ec.png)
+
+Solo tenemos que dar clic en el nombre para acceder a los detalles del Board
+
+![image](https://cloud.githubusercontent.com/assets/16099685/25509574/9b5c1de8-2b7f-11e7-84cc-d1d3f993a255.png)
+
 * Referencia usuario administrador
+
+Antes de ejecutar el sistema se debe de modificar los seeds para tener al menos un usuario creado con el Rol de administrador para poder acceder al sistema y realizar todas las funciones del mismo. 
+
+-SEEDS.RB
+```Ruby
+permissions = [
+  { controller: "Role", assignment: [ 0, 1, 2, 3 ] },
+  { controller: "User", assignment: [ 0, 1, 2, 3 ] }
+]
+
+roles = [
+  { name: 'Admin' }
+]
+
+users = [
+  { username: "name", first_name: "name", last_name: "name" },
+  { username: "name", first_name: "name", last_name: "name" },
+  { username: "name", first_name: "name", last_name: "name" }
+]
+```
+Una vez configurado se procede a realizar el siguiente comando en la terminal
+
+`rake db:seed`
 
 ### Contribución
 
 * Contribución para usuarios
 
+Hacer que los keys de Trello cargado en Initializers/trello.rb sean privados 
+
+Agregar un `input type="text"`  para cada una de las tareas donde se guarde las horas tardadas en esa tarea dentro de la DB según el usuario ingresado. 
+
 * Pasos para aportar
+
+1. Crear una carpeta en tu PC
+
+2. Ejecutar el comando `git clone https://github.com/LordOfTheSky/bitlab.git`
+
+3. En la terminal se crea un nuevo branch para subir modificaciones mediante `git checkout -b nuevobranch`
+
+4. Se verifica que el branch sea creado mediante `git branch` y nos encontremos posicionados dentro de el, sale el siguiente signo `*` a lado del branch que nos encontramos
+
+5. Se modifica nuestra ruta para subir archivos mediante `git branch nuevobranch` seguido de `git checkout nuevobranch`
+
+6. Podemos realizar commits mediante `git commit -m "name"`
 
 ### Roadmap
 
 * Requerimientos futuros
+
+1. Guardar horas totales para cada tarea y proyecto
+
+2. Una manera más fácil de agregar los keys de Trello y poder acceder a ellos
