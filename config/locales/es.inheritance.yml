@@ -1,0 +1,24 @@
+es:
+    languages:
+      spanish: 'español'
+      english: 'inglés'
+    menu:
+      menu: 'menú'
+      catalogs: 'catálogos'
+      logout: 'cerrar sesión'
+      select_all: 'seleccionar todas'
+      selected: 'seleccionados'
+      search: 'buscar'
+      filter: 'filtrar'
+      clear_filter: 'limpiar filtros'
+      example: 'ejemplo'
+    multipleselect:
+      non_selected_text: 'selecciona un texto'
+    actions:
+      index: 'Listado'
+      new: 'Crear'
+      edit: 'Editar'
+      show: 'Detalle'
+      username: 'Usuario'
+    prompts:
+      select: 'selecciona un'

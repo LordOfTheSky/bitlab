@@ -1,0 +1,20 @@
+<header class="navbar navbar-fixed-top navbar-shadow bg-dark">
+  <div class="navbar-branding">
+    <a class="navbar-brand pt10" href="/">
+      <!-- <%# load_svg 'logo/logo', :png, 'img-responsive' %> -->
+      <b>Bitlab</b>Admin
+    </a>
+    <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
+  </div>
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <div class="navbar-btn btn-group">
+        <%= topbar_menu_toggle 'fa fa-plus' %>
+      </div>
+    </li>
+    <%= navbar_divider %>
+    <%= navbar_dropdown current_user.full_name do %>
+      <%= navbar_dropdown_footer ' Cerrar sesión', 'users_logout_path', 'fa fa-power-off' %>
+    <% end %>
+  </ul>
+</header>
