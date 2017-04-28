@@ -352,3 +352,7 @@ Agregar un `input type="text"`  para cada una de las tareas donde se guarde las 
 1. Guardar horas totales para cada tarea y proyecto
 
 2. Una manera más fácil de agregar los keys de Trello y poder acceder a ellos
+
+
+### Video 
+[![Alt text](https://img.youtube.com/vi/d0vgpBXpZAQ/0.jpg)](https://www.youtube.com/watch?v=d0vgpBXpZAQ)
